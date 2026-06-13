@@ -492,6 +492,9 @@
   var currentQR = null;
 
   function switchTab(tab) {
+    // Close PDF viewer if open
+    document.getElementById('log-overlay').classList.remove('open');
+    document.getElementById('log-frame').src = '';
     ['logs','photos','devos'].forEach(function(t) {
       document.getElementById('section-'+t).classList.toggle('active', t===tab);
       document.getElementById('tab-'+t).classList.toggle('active', t===tab);
